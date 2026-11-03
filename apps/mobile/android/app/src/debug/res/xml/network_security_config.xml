@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  DEBUG builds only (overrides src/main/res/xml/network_security_config.xml).
+  Cleartext is allowed everywhere so Metro on a LAN IP and the local QuantDesk API
+  (http://10.0.2.2:8000 on the emulator, or your machine's LAN IP on a device) both work.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

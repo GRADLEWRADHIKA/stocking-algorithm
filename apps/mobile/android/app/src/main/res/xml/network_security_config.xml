@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  QuantDesk is local-first: the FastAPI backend runs on the user's own computer and is reached over
+  plain HTTP at an address the user enters in the app (the emulator alias 10.0.2.2, localhost via
+  adb reverse, or the computer's LAN IP such as 192.168.1.20). LAN addresses cannot be listed in
+  advance, so cleartext is permitted for every host. The app sends no third-party traffic and holds
+  no API keys; only the user's QuantDesk session tokens travel to their own server.
+  Serving the backend behind HTTPS and removing cleartext is the step for any deployment beyond a LAN.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

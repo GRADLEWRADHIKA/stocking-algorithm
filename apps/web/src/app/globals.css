@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* QuantDesk tokens — "data terminal": colour lives on data, chrome stays neutral.
+   Channels are RGB triplets so Tailwind utilities can apply alpha. */
+:root,
+.dark {
+  --ground: 11 12 14;      /* #0B0C0E deep charcoal page */
+  --surface: 19 20 23;     /* #131417 panels */
+  --raised: 27 29 33;      /* #1B1D21 hover / controls */
+  --line: 38 40 45;        /* panel edges */
+  --rule: 30 32 36;        /* row rules */
+  --ink: 242 243 245;
+  --muted: 142 145 152;    /* ~5:1 on surface */
+  --faint: 98 101 108;
+  --accent: 242 166 58;    /* saffron: the selection line */
+  --up: 16 185 129;        /* emerald */
+  --down: 240 82 82;
+  --warn: 217 164 65;
+  --info: 96 155 230;
+  color-scheme: dark;
+}
+.light {
+  --ground: 244 245 247;
+  --surface: 255 255 255;
+  --raised: 240 241 244;
+  --line: 224 226 231;
+  --rule: 236 237 240;
+  --ink: 13 15 18;
+  --muted: 88 92 100;
+  --faint: 140 144 152;
+  --accent: 196 112 4;
+  --up: 4 140 98;
+  --down: 214 40 40;
+  --warn: 176 116 16;
+  --info: 37 99 200;
+  color-scheme: light;
+}
+
+@layer base {
+  * { @apply border-line; }
+  html, body { height: 100%; }
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 64px; }
+  body {
+    @apply bg-ground text-ink font-sans text-sm antialiased;
+  }
+  ::selection { background: rgb(var(--accent) / 0.3); }
+  :focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 2px; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: rgb(var(--line)); border-radius: 10px; border: 3px solid rgb(var(--ground)); }
+  ::-webkit-scrollbar-track { background: transparent; }
+  input[type='number']::-webkit-inner-spin-button { opacity: 0.4; }
+}
+
+@layer components {
+  .num { font-family: var(--font-num), ui-monospace, monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  .panel { @apply bg-surface border border-line rounded-card; }
+  .panel-head { @apply flex items-center justify-between gap-3 px-4 h-11 border-b border-rule; }
+  .panel-title { @apply text-[13px] font-semibold text-ink; }
+  .label { @apply text-xs text-muted; }
+  .tbl { @apply w-full text-sm; }
+  .tbl th { @apply h-9 px-3 text-left text-xs font-normal text-muted whitespace-nowrap; }
+  .tbl td { @apply h-10 px-3 border-t border-rule whitespace-nowrap; }
+  .tbl tbody tr { @apply transition-colors; }
+  .tbl tbody tr.row-link:hover td { @apply bg-raised/70; }
+  .tbl th.r, .tbl td.r { @apply text-right; }
+  .skeleton { @apply relative overflow-hidden rounded bg-raised; }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full animate-shimmer;
+    background: linear-gradient(90deg, transparent, rgb(var(--line) / 0.7), transparent);
+  }
+  .field {
+    @apply h-9 w-full rounded-ctl border border-line bg-ground px-3 text-sm text-ink placeholder:text-faint
+      transition-colors focus:border-accent/70 focus:outline-none disabled:opacity-50;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}

@@ -1,0 +1,44 @@
+# python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+backend/*.db
+backend/*.db-*
+
+# node
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+
+# env / secrets
+.env
+.env.local
+!.env.example
+
+# datasets: generated files are reproducible from the seed
+datasets/simulated/*.csv
+datasets/processed/*
+!datasets/**/.gitkeep
+
+# mobile
+apps/mobile/android/.gradle/
+apps/mobile/android/app/build/
+apps/mobile/android/build/
+apps/mobile/ios/Pods/
+apps/mobile/ios/build/
+*.keystore
+!debug.keystore
+
+# tooling
+.taste-skill/
+.DS_Store
+Thumbs.db
+
+# built APKs are large; publish them as release assets instead of committing
+releases/*.apk

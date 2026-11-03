@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+quantdesk.db
+quantdesk.db-*
+.pytest_cache/
+.env

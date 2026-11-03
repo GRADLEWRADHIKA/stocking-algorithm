@@ -1,0 +1,41 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/JetBrainsMono-Medium.ttf",
+      "sha1": "47efe4c08ce765af0843b68eb390fdda14e2f351"
+    },
+    {
+      "path": "assets/fonts/JetBrainsMono-OFL.txt",
+      "sha1": "2fb600587d4205587feb5f3b14a353ea5d4fefa0"
+    },
+    {
+      "path": "assets/fonts/JetBrainsMono-Regular.ttf",
+      "sha1": "2ec2264f0a75984fb83ba3853d26da9971b25a55"
+    },
+    {
+      "path": "assets/fonts/JetBrainsMono-SemiBold.ttf",
+      "sha1": "128a46ccf11649f2e564c174c9cb8203972dece5"
+    },
+    {
+      "path": "assets/fonts/PublicSans-Bold.ttf",
+      "sha1": "4d4ebfd1623f183b793217349b3c6877c2ddfc65"
+    },
+    {
+      "path": "assets/fonts/PublicSans-Medium.ttf",
+      "sha1": "6cb093f7f53db1ed4ea6e6993873c6c61384977d"
+    },
+    {
+      "path": "assets/fonts/PublicSans-OFL.txt",
+      "sha1": "57000d5b9ff2d4570f8e17b4499b5a17b19e41d9"
+    },
+    {
+      "path": "assets/fonts/PublicSans-Regular.ttf",
+      "sha1": "cafbee7866861023b7ff5af3f17f54e505e8fb86"
+    },
+    {
+      "path": "assets/fonts/PublicSans-SemiBold.ttf",
+      "sha1": "bcea61ded2609fffc317772ea9234e4ac1621a88"
+    }
+  ]
+}
